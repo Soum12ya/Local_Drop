@@ -1,0 +1,5 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root{background:#f9f7f2;color:#1c1f21}
+body{margin:0;font-family:Arial,Helvetica,sans-serif}

@@ -2,7 +2,7 @@ from datetime import datetime
 
 from geoalchemy2 import Geography
 from sqlalchemy import Boolean, DateTime, ForeignKey, String
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base
 
@@ -55,4 +55,9 @@ class Seller(Base):
         DateTime(timezone=True),
         default=datetime.utcnow,
         nullable=False,
+    )
+
+    user = relationship(
+        "User", 
+        back_populates="seller"
     )

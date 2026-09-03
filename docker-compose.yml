@@ -17,8 +17,10 @@ services:
 
   api:
     build: ./apps/api
-    environment:
-      DATABASE_URL: postgresql+psycopg://localdrop:localdrop@db:5435/localdrop
+    
+    env_file:
+    - ./apps/api/.env.docker
+
     ports:
       - "8000:8000"
     depends_on:
